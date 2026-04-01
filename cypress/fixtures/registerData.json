@@ -1,0 +1,9 @@
+{
+    "url": "https://naveenautomationlabs.com/opencart/index.php?route=account/register",
+    "firstname": "Test",
+    "lastname": "Test",
+    "email": "test@gmail.com",
+    "phn": "7898527413",
+    "password": "Test@123",
+    "confirmpass": "Test@123"
+}
