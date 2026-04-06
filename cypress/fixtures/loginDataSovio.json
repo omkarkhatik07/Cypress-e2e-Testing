@@ -1,0 +1,13 @@
+{
+ "login":{
+        "email":"testing1@yopmail.com",
+        "password":"User@12345",
+        "expectedUrl":"https://qa.sovio.id/dashboard",
+        "email1":" ",
+        "password1":" ",
+        "emailError":"Enter a valid email"
+        }
+
+
+
+}

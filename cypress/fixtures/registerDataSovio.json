@@ -1,0 +1,19 @@
+{
+
+    "url":{
+        "loginUrl":"https://qa.sovio.id/sign-in",
+        "regUrl":"https://qa.sovio.id/sign-up",
+        "yopUrl":"https://yopmail.com/en"
+
+    },
+
+    "register":{
+        "email":"newwwwwwwwwwww@yopmail.com",
+        "firstname":"mmmmm",
+        "lastname":"mmmmmm",
+        "password":"User@12345",
+        "confirmpassword":"User@12345",
+        "verifyMsg":"Verification link has been successfully sent on the email. Please verify"
+        }
+
+}
