@@ -13,7 +13,13 @@
         "singleAlphaFname":"m",
         "singleAlphaLname":"p",
         "lastname":"mmmmmm",
+        "invalidPass":"User",
+        "withoutUCPass":"user@12345",
+        "withoutLCPass":"USER@12345",
+        "withoutNumericPass":"User@imnjfnfn",
+        "withoutSpCharPass":"User123456",
         "password":"User@12345",
+        "misMatchConfmPass":"Alex@12222",
         "confirmpassword":"User@12345",
         "verifyMsg":"Verification link has been successfully sent on the email. Please verify"
         }

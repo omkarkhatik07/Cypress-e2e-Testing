@@ -104,6 +104,97 @@ describe("Register Flow", () => {
     })
 
 
-    
+    it("RegisterUsingPasswordLengthLessThan8Character",()=>{
+        cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.invalidPass);
+        regObj.enterConPass(registerDataSovio.register.invalidPass);
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Password must be at least 8 characters");
+    })
+     it("RegisterUsingPasswordWithoutUpperCaseCharacter",()=>{
+        cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.withoutUCPass);
+        regObj.enterConPass(registerDataSovio.register.withoutUCPass);
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character");
+    })
+
+    it("RegisterUsingPasswordWithoutLowerCaseCharacter",()=>{
+        cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.withoutLCPass);
+        regObj.enterConPass(registerDataSovio.register.withoutLCPass);
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character");
+    })
+
+     it("RegisterUsingPasswordWithoutNumeric",()=>{
+        cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.withoutNumericPass);
+        regObj.enterConPass(registerDataSovio.register.withoutNumericPass);
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character");
+    })
+
+     it("RegisterUsingPasswordWithoutSpecialCharacter",()=>{
+        cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.withoutSpCharPass);
+        regObj.enterConPass(registerDataSovio.register.withoutSpCharPass);
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character");
+    })
+
+
+    it("RegisterUsingPasswordWithKeepingConfirmPassFieldEmpty",()=>{
+        cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.password);
+        cy.get(regObj.txtConfirmPass).clear();
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Confirm Password is required");
+    })
+
+    it("RegisterUsingPasswordMismatchingPassConifrmPass",()=>{
+         cy.visit(registerDataSovio.url.regUrl);
+        regObj.enterEmail(registerDataSovio.register.email);
+        regObj.clickContinue();
+        cy.get("input[placeholder='Email address']").should('have.value', registerDataSovio.register.email);
+        regObj.enterFirstName(registerDataSovio.register.firstname);
+        regObj.enterLastName(registerDataSovio.register.lastname);
+        regObj.enterPassWord(registerDataSovio.register.password);
+        regObj.enterConPass(registerDataSovio.register.misMatchConfmPass);
+        regObj.clickCreateAcc();
+        cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Passwords must match");
+    })
+
+
 
 })
