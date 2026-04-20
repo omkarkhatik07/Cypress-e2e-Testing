@@ -25,6 +25,5 @@ describe("Login test cases negative", ()=>{
         loginObj.enterPassword(loginDataSovio.login.password1);
         loginObj.clickSignUp();
         loginObj.emailValidation().should('have.text',loginDataSovio.login.emailError);
-        
     })
 })

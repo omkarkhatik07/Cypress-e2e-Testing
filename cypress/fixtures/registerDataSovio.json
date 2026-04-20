@@ -8,8 +8,10 @@
     },
 
     "register":{
-        "email":"newwwwwwwwwwww@yopmail.com",
+        "email":"user9@yopmail.com",
         "firstname":"mmmmm",
+        "singleAlphaFname":"m",
+        "singleAlphaLname":"p",
         "lastname":"mmmmmm",
         "password":"User@12345",
         "confirmpassword":"User@12345",
