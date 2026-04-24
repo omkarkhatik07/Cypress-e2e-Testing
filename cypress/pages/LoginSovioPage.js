@@ -1,12 +1,11 @@
 export class LoginSovio {
-    txtEmail = "input[type='email']";
+    txtEmail = "input[placeholder='test@example.com']";
     txtPassword = "input[type='password']";
     ForgotPassLink = "";
     toggleIcon = ".lucide.lucide-eye.h-4.w-4";
     submitBtn = "[type='submit']";
     createAcc = "a[class='url-link']";
     Emptyemail = ".text-destructive.text-sm"
-
 
     enterEmail(email) {
         cy.get(this.txtEmail).type(email);
@@ -34,11 +33,4 @@ export class LoginSovio {
     emailValidation(){
          return cy.get(this.Emptyemail);
     }
-
-
-
-
-
-
-
 }

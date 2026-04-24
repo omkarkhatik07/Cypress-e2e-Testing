@@ -195,6 +195,6 @@ describe("Register Flow", () => {
         cy.get(".text-destructive.mt-1.text-sm").should('have.text', "Passwords must match");
     })
 
-
+    
 
 })
